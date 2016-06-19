@@ -9,6 +9,7 @@ int main (){
     zmq::context_t context(1);
     zmq::socket_t socket(context, ZMQ_REQ);
     socket.connect ("tcp://localhost:5555");
+    socket.connect ("tcp://localhost:5556");
 
     for (int request_nbr = 0; request_nbr != 10; request_nbr++) {
         zmq::message_t request = get_msg("Hello");

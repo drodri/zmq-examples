@@ -8,7 +8,6 @@ int main () {
     zmq::context_t context;
     zmq::socket_t subscriber (context, ZMQ_SUB);
     subscriber.connect("tcp://localhost:5557");
-    subscriber.connect("tcp://localhost:5558");
     subscriber.setsockopt(ZMQ_SUBSCRIBE, "H", 1);
 
     while (1) {
